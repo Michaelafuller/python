@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    width: 1200px;
+    margin: 20px auto;
+}
+
+#header {
+    width: 1200px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    background-color: black;
+    color: red;
+    width: 400px;
+    display: inline-block;
+}
+
+#game_board {
+    display: flex;
+    justify-content: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.block {
+    display: flex
+}
+
+.color1 {
+    background-color: red;
+    height: 50px;
+    width: 50px;
+}
+
+.color2 {
+    background-color: black;
+    height: 50px;
+    width: 50px;
+}
