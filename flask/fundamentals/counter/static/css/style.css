@@ -1,0 +1,27 @@
+#container {
+    text-align: center;
+}
+
+#counter {
+    height: 30px;
+}
+
+#click {
+    background-color: blue;
+}
+
+#reset {
+    background-color: red;
+}
+
+button {
+    height: 30px;
+    width: 75px;
+    margin: 30px 30px;
+    color: white;
+}
+
+#buttons {
+    justify-content: center;
+    display: flex;
+}
