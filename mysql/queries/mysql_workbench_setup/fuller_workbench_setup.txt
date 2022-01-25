@@ -1,0 +1,34 @@
+CREATE TABLE `new_schema`.`welders` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`));
+
+SELECT * FROM welders;
+
+INSERT INTO welders (id, first_name, last_name, is_certified, created_at, updated_at)
+VALUES( '1', 'mike', 'fuller', '1', DEFAULT, DEFAULT);
+
+select * from welders;
+
+INSERT INTO welders (id, first_name, last_name, is_certified, created_at, updated_at)
+VALUES( DEFAULT, 'joe', 'schmoe', '0', DEFAULT, DEFAULT);
+
+SELECT * FROM welders;
+
+UPDATE welders SET first_name = 'Mike'
+WHERE id = 1;
+
+ALTER TABLE `new_schema`.`welders` 
+ADD COLUMN `has_equipment` TINYINT NULL DEFAULT 0 AFTER `is_certified`;
+
+UPDATE welders SET has_equipment = '1'
+WHERE id = 1;
+
+SELECT * FROM welders;
+
+INSERT INTO welders (id, first_name, last_name, is_certified, created_at, updated_at)
+VALUES (DEFAULT, 'Steven', 'Segal', '1', DEFAULT, DEFAULT);
+
+DELETE FROM welders
+WHERE id > 2;
+
+SELECT * FROM welders;

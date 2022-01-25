@@ -35,13 +35,13 @@
 <!-- After the video... -->
 <!-- Table seems clearly the way to go, to avoid flex direction conflict -->
 
-            {% if height: %}
+            {% if height %}
             <table>
-                {% for idx in range(height): %}
+                {% for idx in range(height) %}
                 <tr>
-                    {% if idx % 2 == 0: %}
+                    {% if idx % 2 == 0 %}
                     <td class="color1"></td>
-                    {% else: %}
+                    {% else %}
                     <td class="color2"></td>
                     {% endif %}
                 </tr>

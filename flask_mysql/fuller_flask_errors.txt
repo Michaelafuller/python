@@ -1,0 +1,23 @@
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+	it demonstrates that a password is being utilized, but the access is denied nonetheless. Must be a bad password.
+
+charset = 'utf8mb4',
+
+	is not case sensitive. All caps didn't affect the load
+
+No changes on any queries break the app, this is because no queries are being run.
+
+def connectToMySQL(db):
+    return MySQLConnection('first_flask')
+
+	still works, because this is the name of the db, making the function non-universal, but still functional.
+
+for x in range(0,10):
+    print(x)
+	
+	depending where I put this, it will break the code. I spent some time putting it in places that wouldn't break
+	and finding places it would. As long as the indentation didn't affect the code block, and it wasn't interrupting
+	code block, it would work every time. Sometimes, it would actually print twice.
+
+

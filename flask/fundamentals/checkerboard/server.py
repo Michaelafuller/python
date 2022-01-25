@@ -11,8 +11,9 @@ def board_height(height):
 
 @app.route('/<int:height>/<int:width>')
 def multiplier(height, width):
-        return render_template('index.html', height=height, width=width)
+    return render_template('index.html', height=height, width=width)
 
 
 if __name__=="__main__":
     app.run(debug=True)                   
+

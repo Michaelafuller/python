@@ -1,0 +1,44 @@
+SELECT * FROM dojos;
+
+ALTER TABLE `dojos_and_ninjas`.`dojos` 
+CHANGE COLUMN `created_at` `created_at` DATETIME NULL DEFAULT now() ,
+CHANGE COLUMN `updated_at` `updated_at` DATETIME NULL DEFAULT now() on update now() ;
+
+INSERT INTO dojos (name)
+VALUES ('East');
+
+INSERT INTO dojos (name)
+VALUES ('West'), ('Deep South');
+
+DELETE FROM dojos
+WHERE id > 1;
+
+DELETE FROM dojos
+WHERE id = 1;
+
+INSERT INTO dojos (name)
+VALUES ('East Coast'), ('West Coast'), ('No Coast');
+
+SELECT * FROM ninjas;
+
+ALTER TABLE ninjas
+CHANGE COLUMN `created_at` `created_at` DATETIME NULL DEFAULT now() ,
+CHANGE COLUMN `updated_at` `updated_at` DATETIME NULL DEFAULT now() on update now() ;
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id)
+VALUES ('Biggie', 'Smalls', '75', '5'), ('Michael', 'Bloomberg', '100', '5'), ('Broadway', 'Star', '50', '5');
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id)
+VALUES ('Tupac', 'Shakur', '75', '6'), ('Elon', 'Musk', '50', '6'), ('Hollywood', 'Star', '18', '6');
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id)
+VALUES ('Hillbilly', 'Jim', '65', '7'), ('Hoedown', 'Steve', '35', '7'), ('Haymaker', 'Jobe', '30', '7');
+
+SELECT * FROM ninjas
+WHERE dojo_id = 5;
+
+SELECT * FROM ninjas
+WHERE dojo_id = 7;
+
+SELECT dojo_id FROM ninjas
+WHERE id = 12;
