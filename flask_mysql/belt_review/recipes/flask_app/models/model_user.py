@@ -1,4 +1,4 @@
-DATABASE = 'login_reg'
+DATABASE = 'recipes_schema'
 from flask import flash, session
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app import app, bcrypt
@@ -16,6 +16,7 @@ class User:
         self.pw = data['pw']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
+        self.recipes = []
 
 
     @classmethod
@@ -40,9 +41,11 @@ class User:
     @classmethod
     def get_one(cls, data):
         query = "SELECT * FROM users WHERE id = %(id)s;"
-        user_called = connectToMySQL(DATABASE).query_db(query, data)
+        results = connectToMySQL(DATABASE).query_db(query, data)
 
-        return cls(user_called[0])
+        if results:
+            return cls(results[0])
+        return False
 
     @classmethod
     def get_one_by_email(cls, data):
